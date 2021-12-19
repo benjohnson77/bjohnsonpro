@@ -1,0 +1,37 @@
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "header.html" . }}
+  <body>
+    {{ partial "menu.html" .}}
+    <main id="main">
+    
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>{{ .Page.Title }}</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-page">
+      <div class="container">
+        <div class=""> <!--- intro to the items -->
+          {{ .Page.Content }}
+        </div>
+        {{ range .Pages }}  
+        <div class="card"> <!--- items list -->
+          <img src="{{ .Params.img }}" class="card-img-left" style="width:100px" alt="{{ .Params.brand }} {{ .Title }}">
+          <div class="card-body">
+            <h4>{{ .Params.brand }} {{ .Title }}</h3>
+            <p> {{ .Description }} </p>
+            <p> {{ .Params.review }}</p>
+            <a href="{{ .Params.buylink }}" class="btn btn-primary" >Go To Buy</a>
+          </div>  
+        </div>
+        <br/>
+        {{ end }}  
+      </div>
+    </section>
+</main><!-- End #main -->
+{{ partial "footer.html" . }}
+</body>  
+</html>

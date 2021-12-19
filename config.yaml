@@ -1,0 +1,10 @@
+baseURL: 'http://example.org/'
+languageCode: 'en-us'
+title: "Ben Johnson's Website"
+params:
+  port_name: "Ben Johsnon"
+  twitter: "https://twitter.com/benjohnson77"
+  facebook: "https://www.facebook.com/benjohnson77"
+  instagram: "https://www.instagram.com/ubersoftware/"
+  linkedin: "https://www.linkedin.com/in/benjaminrjohnson/"
+  github: "https://github.com/benjohnson77"

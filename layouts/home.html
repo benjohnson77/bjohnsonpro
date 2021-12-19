@@ -1,0 +1,12 @@
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "header.html" . }}
+  <body>
+    {{ partial "menu.html" .}}
+
+    {{ partial "hero.html" . }}
+    <main id="main">
+      {{ .Page.Content }}
+    </main><!-- End #main -->
+    {{ partial "footer.html" . }}
+  </body>  
+</html>
