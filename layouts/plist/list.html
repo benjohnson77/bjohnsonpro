@@ -14,19 +14,19 @@
 
     <section class="inner-page">
       <div class="container">
-        <div class=""> <!--- intro to the items -->
+        <div class=""> <!-- intro to the items -->
           {{ .Page.Content }}
         </div>
         {{ range .Pages }}  
-        <div class="card"> <!--- items list -->
+        <div class="card"> <!-- items list -->
           <a href="{{ .Permalink }}">
           <img src="{{ .Params.img }}" class="card-img-left" style="width:100px" alt="{{ .Params.brand }} {{ .Section }}">
         </a>
           <div class="card-body">
-            <h4>{{ .Params.brand }} {{ .Title }}</h3>
+            <h4>{{ .Params.brand }} {{ .Title }}</h4>
             <p> {{ .Description }} </p>
             <p> {{ .Params.review }}</p>
-            <a href="{{ .Params.buylink }}" class="btn btn-primary" >Go To Buy</a>
+            <a href="{{ .Params.buylink }}" class="btn btn-primary">Buy Now</a>
           </div>  
         </div>
         <br/>

@@ -14,18 +14,19 @@
 
     <section class="inner-page">
       <div class="container">
-        <div class=""> <!--- intro to the items -->
+        <div class=""> <!-- intro to the items -->
           {{ .Page.Content }}
         </div>
         {{ range .Sections }}  
-        <div class="card"> <!--- items list -->
-          <a href="{{ .Permalink }}">
-          <div class="card-body">
-            <h4>{{ .Params.brand }} {{ .Title }}</h3>
-            <p> {{ .Description }} </p>
-            <p> {{ .Params.review }}</p>
+        <div class="card"> <!-- items list -->
+          <div>
+            <a href="{{ .Permalink }}">
+              <img src="{{ .Params.img }}" class="card-img-left" style="width:100px" alt="{{ .Params.brand }} {{ .Section }}">
+            </a>
           </div>
-        </a>  
+          <div class="card-body">
+            <h4>{{ .Params.brand }} {{ .Title }}</h4>
+          </div>
         </div>
         <br/>
         {{ end }}  
