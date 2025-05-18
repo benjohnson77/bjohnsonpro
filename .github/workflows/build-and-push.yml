@@ -16,7 +16,7 @@ jobs:
       - name: Build Hugo site
         run: |
           mkdir -p public
-          snap install hugo
+          sudo snap install hugo
           hugo --destination public 
           ls -la public
 
