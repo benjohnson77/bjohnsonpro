@@ -1,0 +1,32 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main # Or your main branch
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest # Or your preferred runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Hugo site
+        run: |
+          mkdir -p public
+          hugo --destination public 
+          ls -la public
+
+      - name: Build Docker image
+        run: |
+          docker build -t benjohnson77/bjohnsonpro:latest .
+
+      - name: Login to Docker Hub
+        run: |
+          docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: Push Docker image
+        run: |
+          docker push benjohnson77/bjohnsonpro:latest
